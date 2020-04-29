@@ -14,6 +14,7 @@
 		2948A911245A0CFF004B9B7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2948A90F245A0CFF004B9B7A /* LaunchScreen.storyboard */; };
 		2948A920245A1011004B9B7A /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A91F245A1011004B9B7A /* Anime.swift */; };
 		2948A922245A11E7004B9B7A /* AnimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A921245A11E7004B9B7A /* AnimeController.swift */; };
+		2948A924245A1287004B9B7A /* AnimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A923245A1287004B9B7A /* AnimeError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2948A912245A0CFF004B9B7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2948A91F245A1011004B9B7A /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		2948A921245A11E7004B9B7A /* AnimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeController.swift; sourceTree = "<group>"; };
+		2948A923245A1287004B9B7A /* AnimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		2948A91B245A0D4E004B9B7A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2948A923245A1287004B9B7A /* AnimeError.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				2948A907245A0CFD004B9B7A /* SceneDelegate.swift in Sources */,
 				2948A922245A11E7004B9B7A /* AnimeController.swift in Sources */,
 				2948A920245A1011004B9B7A /* Anime.swift in Sources */,
+				2948A924245A1287004B9B7A /* AnimeError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
