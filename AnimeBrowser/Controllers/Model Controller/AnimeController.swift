@@ -49,7 +49,8 @@ class AnimeController {
     }
     
     static func fetchImage(anime: Anime, completion: @escaping (Result<UIImage, AnimeError>)-> Void) {
-        let imageURL = anime.imageURL
+        guard let imageURL = URL(string: anime.imageURL) else {return completion(.failure(.invalidURL))}
+        
         URLSession.shared.dataTask(with: imageURL) { (data, _, error) in
             if let error = error {
                 print(error, error.localizedDescription)

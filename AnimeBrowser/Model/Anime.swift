@@ -14,12 +14,14 @@ struct AnimeTopLevelObject: Decodable {
 
 struct Anime: Decodable {
     let title: String
-    let url: URL
-    let imageURL: URL
-    let startDate: String
-}
-
-enum CodingKeys: String, CodingKey {
-    case imageURL = "image_url"
-    case startDate = "start_date"
+    let url: String
+    let imageURL: String
+    let startDate: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case imageURL = "image_url"
+        case startDate = "start_date"
+        case title
+        case url
+    }
 }
