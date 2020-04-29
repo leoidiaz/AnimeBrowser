@@ -18,6 +18,7 @@
 		2948A926245A1793004B9B7A /* AnimeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A925245A1793004B9B7A /* AnimeCollectionViewController.swift */; };
 		2948A928245A181E004B9B7A /* AnimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A927245A181E004B9B7A /* AnimeCollectionViewCell.swift */; };
 		2948A92A245A1A78004B9B7A /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A929245A1A78004B9B7A /* ViewControllerExtensions.swift */; };
+		2948A92C245A27CA004B9B7A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2948A92B245A27CA004B9B7A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2948A925245A1793004B9B7A /* AnimeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCollectionViewController.swift; sourceTree = "<group>"; };
 		2948A927245A181E004B9B7A /* AnimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2948A929245A1A78004B9B7A /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		2948A92B245A27CA004B9B7A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				2948A91E245A0D66004B9B7A /* Custom Views */,
 				2948A925245A1793004B9B7A /* AnimeCollectionViewController.swift */,
+				2948A92B245A27CA004B9B7A /* DetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2948A92C245A27CA004B9B7A /* DetailViewController.swift in Sources */,
 				2948A92A245A1A78004B9B7A /* ViewControllerExtensions.swift in Sources */,
 				2948A905245A0CFD004B9B7A /* AppDelegate.swift in Sources */,
 				2948A928245A181E004B9B7A /* AnimeCollectionViewCell.swift in Sources */,
