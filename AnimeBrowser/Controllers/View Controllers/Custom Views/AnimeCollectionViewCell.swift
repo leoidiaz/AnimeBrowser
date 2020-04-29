@@ -10,4 +10,6 @@ import UIKit
 
 class AnimeCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var animeImageView: UIImageView!
+    // Add updateViews method
 }
