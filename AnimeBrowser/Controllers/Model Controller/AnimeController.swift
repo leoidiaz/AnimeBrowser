@@ -35,11 +35,7 @@ class AnimeController {
             // Decode
             do {
                 let topLevelObject = try JSONDecoder().decode(AnimeTopLevelObject.self, from: data)
-                let secondLevelArray = topLevelObject.top
-                var animeArray: [Anime] = []
-                for anime in secondLevelArray {
-                    animeArray.append(anime)
-                }
+                let animeArray = topLevelObject.top
                 return completion(.success(animeArray))
             } catch {
                 print(error, error.localizedDescription)

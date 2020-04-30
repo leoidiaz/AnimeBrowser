@@ -52,7 +52,9 @@
                             <outlet property="delegate" destination="WVO-SJ-NYV" id="4EN-dS-bE1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dsy-ya-guN"/>
+                    <navigationItem key="navigationItem" id="dsy-ya-guN">
+                        <nil key="title"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scB-QQ-LH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
