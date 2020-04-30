@@ -12,12 +12,15 @@ import UIKit.UIImage
 class AnimeController {
     
     static private let baseURL = URL(string: "https://api.jikan.moe/v3")
+    static let parameterKey = "anime"
+    static let searchComponent = "q"
+    static let referenceKey = "search"
     
     static func fetchUpcomingAnimes(completion: @escaping (Result<[Anime], AnimeError>) -> Void){
         // URL -- https://api.jikan.moe/v3/top/anime/1/upcoming
         guard let baseURL = baseURL else {return completion(.failure(.invalidURL))}
         let reference = baseURL.appendingPathComponent("top")
-        let type = reference.appendingPathComponent("anime")
+        let type = reference.appendingPathComponent(parameterKey)
         let page = type.appendingPathComponent("1")
         let subtype = page.appendingPathComponent("upcoming")
         let finalURL = subtype
@@ -40,6 +43,38 @@ class AnimeController {
             } catch {
                 print(error, error.localizedDescription)
                 return completion(.failure(.thrownError(error)))
+            }
+        }.resume()
+    }
+    
+    
+    static func fetchSearch(searchTerm: String, completion: @escaping (Result<[Anime], AnimeError>) -> Void) {
+        //https://api.jikan.moe/v3/search/anime?q=Naruto&page=1
+        guard let baseURL = baseURL else {return completion(.failure(.invalidURL))}
+        let url = baseURL.appendingPathComponent(referenceKey)
+        let animeParameter = url.appendingPathComponent(parameterKey)
+        var components = URLComponents(url: animeParameter, resolvingAgainstBaseURL: true)
+        let searchQuery = URLQueryItem(name: searchComponent, value: searchTerm)
+        let pageQuery = URLQueryItem(name: "page", value: "1")
+        components?.queryItems = [searchQuery, pageQuery]
+        guard let finalURL = components?.url else {return completion(.failure(.invalidURL))}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+            if let error = error {
+                print(error, error.localizedDescription)
+                return completion(.failure(.thrownError(error)))
+            }
+            
+            guard let data = data else {return completion(.failure(.noData))}
+            
+            do {
+                let topLevelObject = try JSONDecoder().decode(SearchTopLevelObject.self, from: data)
+                let searchResults = topLevelObject.results
+                return completion(.success(searchResults))
+            } catch {
+                print(error.localizedDescription)
+                return completion(.failure(.invalidURL))
             }
         }.resume()
     }

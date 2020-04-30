@@ -12,6 +12,10 @@ struct AnimeTopLevelObject: Decodable {
     let top: [Anime]
 }
 
+struct SearchTopLevelObject: Decodable {
+    let results: [Anime]
+}
+
 struct Anime: Decodable {
     let title: String
     let type: String

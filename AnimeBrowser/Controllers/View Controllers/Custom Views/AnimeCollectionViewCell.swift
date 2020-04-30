@@ -9,18 +9,40 @@
 import UIKit
 
 class AnimeCollectionViewCell: UICollectionViewCell {
-    
+    //MARK: - Outlets
     @IBOutlet weak var animeImageView: UIImageView!
-    // Add updateViews method
+    //MARK: - Properties
     var anime: Anime? {
         didSet{
-            guard let anime = anime else {return}
-            updateView(anime: anime)
+            updateViewWithTopAnime()
         }
     }
     
-    func updateView(anime: Anime){
+    var search: Anime? {
+        didSet{
+            updateViewWithSearch()
+        }
+    }
+    
+    //MARK: - Private Methods
+    func updateViewWithTopAnime(){
+        guard let anime = anime else {return }
         AnimeController.fetchImage(anime: anime) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let animeImage):
+                    self.animeImageView.image = animeImage
+                case .failure(_):
+                    print("Error")
+                }
+            }
+        }
+        animeImageView.layer.cornerRadius = 10
+    }
+    
+    func updateViewWithSearch(){
+        guard let search = search else { return }
+        AnimeController.fetchImage(anime: search) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animeImage):
