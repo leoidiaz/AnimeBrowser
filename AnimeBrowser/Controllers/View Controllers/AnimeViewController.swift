@@ -103,6 +103,7 @@ extension AnimeViewController: UISearchBarDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let animes):
+                    self?.title = "Results for:  \(searchTerm)"
                     self?.searchAnimes = animes
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -114,6 +115,7 @@ extension AnimeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             fetchAnimes()
+            self.title = "Coming Soon"
         }
     }
 }
