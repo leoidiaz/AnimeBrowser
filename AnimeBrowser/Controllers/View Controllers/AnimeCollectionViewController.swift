@@ -57,6 +57,7 @@ class AnimeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AnimeCollectionViewCell else {return UICollectionViewCell()}
         let anime = upcomingAnimes[indexPath.row]
+        cell.animeImageView.image = nil
         cell.anime = anime
         return cell
     }

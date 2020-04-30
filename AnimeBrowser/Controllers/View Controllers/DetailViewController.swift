@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var animeImageView: UIImageView!
     @IBOutlet weak var startDateLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     //MARK: - Properties
     
     var anime: Anime?
@@ -28,6 +29,7 @@ class DetailViewController: UIViewController {
     private func updateView() {
         guard let anime = anime else { return }
         titleLabel.text = anime.title.lowercased().capitalized
+        typeLabel.text = "Type: \(anime.type.lowercased().capitalized)"
         AnimeController.fetchImage(anime: anime) { (result) in
             DispatchQueue.main.async {
                 switch result {

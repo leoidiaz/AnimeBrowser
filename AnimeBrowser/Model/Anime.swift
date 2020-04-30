@@ -14,7 +14,7 @@ struct AnimeTopLevelObject: Decodable {
 
 struct Anime: Decodable {
     let title: String
-    //let url: String
+    let type: String
     let imageURL: String
     let startDate: String?
     
@@ -22,6 +22,6 @@ struct Anime: Decodable {
         case imageURL = "image_url"
         case startDate = "start_date"
         case title
-        //case url
+        case type
     }
 }
