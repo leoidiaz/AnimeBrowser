@@ -24,7 +24,7 @@ class AnimeController {
         let page = type.appendingPathComponent("1")
         let subtype = page.appendingPathComponent("upcoming")
         let finalURL = subtype
-        print(finalURL)
+//        print(finalURL)
         // Session
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             // Error
@@ -58,7 +58,7 @@ class AnimeController {
         let pageQuery = URLQueryItem(name: "page", value: "1")
         components?.queryItems = [searchQuery, pageQuery]
         guard let finalURL = components?.url else {return completion(.failure(.invalidURL))}
-        print(finalURL)
+//        print(finalURL)
         
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
